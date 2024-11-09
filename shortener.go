@@ -66,3 +66,4 @@ func redirectToURL(rdb *redis.Client, shortURL string) (string, error) {
 func addCorsHeaders(w http.ResponseWriter) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+}
