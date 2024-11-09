@@ -5,6 +5,8 @@ import (
 	"encoding/base64"
 	"fmt"
 	"log"
+	"net/http"
+	"time"
 
 	"github.com/go-redis/redis/v8"
 )
@@ -60,3 +62,7 @@ func redirectToURL(rdb *redis.Client, shortURL string) (string, error) {
 	log.Printf("Found URL in Redis: %s", url)
 	return url, nil
 }
+
+func addCorsHeaders(w http.ResponseWriter) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
