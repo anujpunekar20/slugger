@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -100,5 +101,9 @@ func main() {
 		http.Redirect(w, r, url, http.StatusSeeOther)
 	})
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // Default to 8080 if not set
+	}
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
