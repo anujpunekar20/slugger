@@ -1,0 +1,39 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of build process
+*.out
+
+# Go specific files
+*.test
+*.mod
+*.sum
+
+# Dependency directories (vendor/)
+vendor/
+
+# GoLand/JetBrains IDE files
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+
+# Environment files
+.env
+
+# Docker-related files
+docker-compose.override.yml
+docker-compose.*
+docker-compose*.yml
+*.env
+
+# Heroku specific
+.heroku/
